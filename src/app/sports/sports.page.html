@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sports Headlines</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Using an Ion Thumbnail to display articles -->
+<ion-content>
+  <div *ngFor="let news of SportsNews"> <!-- Loop over articles in the array -->
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="{{news.urlToImage}}"> <!-- Article Image -->
+      </ion-thumbnail>
+      <ion-label><p>{{news.title}}</p></ion-label> <!-- Article Title -->
+      <ion-button (click)="openInBrowser(news.url)">View</ion-button> <!-- Open in plugin browser -->
+    </ion-item>
+  </div>
+</ion-content>

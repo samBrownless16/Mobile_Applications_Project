@@ -1,0 +1,35 @@
+<ion-content [fullscreen]="true">
+  <!-- use an ion-select to allow user to choose a country which will be stored locally, and used to display 
+    news articles from country selected -->
+  <ion-item>
+    <ion-label color="primary">Choose Country</ion-label>
+    <ion-select [(ngModel)]="countrySelected" okText="Confirm" cancelText="Dismiss" (ionChange)="countryNewsPicked()">
+      <ion-select-option value="ie">Ireland</ion-select-option>
+      <ion-select-option value="gb">United Kingdom</ion-select-option>
+      <ion-select-option value="us">United States</ion-select-option>
+      <ion-select-option value="de">Germany</ion-select-option>
+      <ion-select-option value="fr">France</ion-select-option>
+      <ion-select-option value="it">Italy</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <br/>
+  <!-- Each news section displayed using ion-cards, click anywhere in card to go to page -->
+  <ion-card [routerLink]="['/general']" color="primary">
+    <img src="../../assets/images/news_Placeholder.jpg" />
+    <ion-card-header>
+      <ion-card-title>General News</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card [routerLink]="['/sports']" color="success">
+    <img src="../../assets/images/sports_Placeholder.jpg" />
+    <ion-card-header>
+      <ion-card-title>Sports News</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card [routerLink]="['/entertainment']" color="danger">
+    <img src="../../assets/images/entertainment_Placeholder.jpg" />
+    <ion-card-header>
+      <ion-card-title>Entertainment News</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+</ion-content>
